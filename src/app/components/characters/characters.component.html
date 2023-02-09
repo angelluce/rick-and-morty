@@ -1,8 +1,9 @@
 <div class="row row-cols-auto justify-content-center m-0 p-0 b-0">
-  <div *ngFor="let character of dataCharacters" class="card m-1 p-0" style="width: 12rem;">
+  <div *ngFor="let character of dataCharacters" class="card m-1 p-0" style="width: 10rem;">
     <img src="{{character.image}}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{character.name}}</h5>
+      <p class="card-subtitle m-0 p-0">{{character.name}}</p>
     </div>
   </div>
 </div>
+

@@ -11,6 +11,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
 import {DialogModule} from "primeng/dialog";
 import {DockModule} from "primeng/dock";
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {DockModule} from "primeng/dock";
     HttpClientModule,
     DialogModule,
     DockModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
