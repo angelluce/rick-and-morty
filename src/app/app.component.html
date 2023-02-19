@@ -5,18 +5,5 @@
     </ng-template>
   </p-dock>
 
-  <p-dialog [(visible)]="display"
-            [style]="{width: '95vw', height: '75vh'}"
-            [baseZIndex]="10000"
-            [closable]="false"
-            [showHeader]="false"
-            [closeOnEscape]="false"
-            [draggable]="false"
-            appendTo="body"
-            styleClass="p-fluid">
-    <ng-template pTemplate="header">
-      {{title}}
-    </ng-template>
-    <router-outlet></router-outlet>
-  </p-dialog>
+  <router-outlet></router-outlet>
 </div>

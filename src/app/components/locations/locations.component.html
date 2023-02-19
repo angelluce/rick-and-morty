@@ -1,1 +1,23 @@
-<p>locations works!</p>
+<p-dialog [(visible)]="display"
+          [style]="{width: '95vw', height: '75vh'}"
+          [baseZIndex]="10000"
+          [draggable]="false"
+          [header]="'Ubicaciones'"
+          appendTo="body"
+          styleClass="p-fluid">
+  <div class="row row-cols-auto justify-content-center m-0 p-0 b-0">
+
+  </div>
+  <ng-template pTemplate="footer">
+    <button [disabled]="!dataInfo.prev"
+            pButton type="button"
+            icon="pi pi-angle-left"
+            class="px-3"
+            (click)="getLocations(dataInfo.prev)"></button>
+    <button [disabled]="!dataInfo.next"
+            pButton type="button"
+            icon="pi pi-angle-right"
+            class="px-3"
+            (click)="getLocations(dataInfo.next)"></button>
+  </ng-template>
+</p-dialog>

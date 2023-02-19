@@ -9,9 +9,10 @@ export class RickAndMortyService {
 
   constructor(private _http: HttpClient) { }
 
-  getCharacters(): Promise<any> {
+  getData(url: string): Promise<any> {
     return this._http.get<any>(
-      'https://rickandmortyapi.com/api/character'
+      url
     ).toPromise();
   }
+
 }

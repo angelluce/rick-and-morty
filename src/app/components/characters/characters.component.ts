@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CharacterModel} from "../../models/CharacterModel";
 import {RickAndMortyService} from "../../services/rick-and-morty.service";
+import {InfoModel} from "../../models/InfoModel";
 
 @Component({
   selector: 'app-characters',
@@ -8,18 +9,27 @@ import {RickAndMortyService} from "../../services/rick-and-morty.service";
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent implements OnInit {
-  dataCharacters: CharacterModel[] = [];
+  urlApi = 'https://rickandmortyapi.com/api/character';
   display = true;
+  isLoading = true;
+
+  dataCharacters: CharacterModel[];
+  dataInfo: InfoModel;
 
   constructor(private rickmortyService: RickAndMortyService) {
   }
 
   ngOnInit(): void {
-    this.rickmortyService.getCharacters()
+    this.getCharacters(this.urlApi);
+  }
+
+  getCharacters(url: string): void {
+    this.isLoading = true;
+    this.rickmortyService.getData(url)
       .then((res) => {
         this.dataCharacters = res.results;
-        console.log(this.dataCharacters)
-        console.log(this.dataCharacters.length)
+        this.dataInfo = res.info;
+        this.isLoading = false;
       })
       .catch((err) => {
         console.log(err)

@@ -12,6 +12,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {DialogModule} from "primeng/dialog";
 import {DockModule} from "primeng/dock";
 import {ButtonModule} from 'primeng/button';
+import {TagModule} from "primeng/tag";
 
 @NgModule({
   declarations: [
@@ -21,15 +22,16 @@ import {ButtonModule} from 'primeng/button';
     LocationsComponent,
     EpisodesComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    DialogModule,
-    DockModule,
-    ButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        DialogModule,
+        DockModule,
+        ButtonModule,
+        TagModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
