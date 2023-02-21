@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RickAndMortyService} from "../../services/rick-and-morty.service";
 import {EpisodesModel} from "../../models/EpisodesModel";
 import {InfoModel} from "../../models/InfoModel";
+import {MessageService} from "primeng/api";
+import {paths} from "../../shared/paths";
 
 @Component({
   selector: 'app-episodes',
@@ -9,16 +11,17 @@ import {InfoModel} from "../../models/InfoModel";
   styleUrls: ['./episodes.component.css']
 })
 export class EpisodesComponent implements OnInit {
-  urlApi = 'https://rickandmortyapi.com/api/episode';
   display = true;
 
   dataEpisodes: EpisodesModel[];
   dataInfo: InfoModel;
 
-  constructor(private rickmortyService: RickAndMortyService) { }
+  constructor(private rickmortyService: RickAndMortyService,
+              private messageService: MessageService) {
+  }
 
   ngOnInit(): void {
-    this.getEpisodes(this.urlApi);
+    this.getEpisodes(paths.episodes);
   }
 
   getEpisodes(url: string): void {
@@ -26,11 +29,9 @@ export class EpisodesComponent implements OnInit {
       .then((res) => {
         this.dataEpisodes = res.results;
         this.dataInfo = res.info;
-        console.log(this.dataEpisodes)
-        console.log(this.dataInfo)
       })
       .catch((err) => {
-        console.log(err)
+        this.messageService.add({severity: 'error', summary: 'Error', detail: err});
       });
   }
 

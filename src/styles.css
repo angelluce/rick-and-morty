@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: 'Shantell Sans', cursive;
+  cursor: default;
+}
+
+.info {
+  color: #dc8700;
+  font-weight: bold;
+}
+
+.pi {
+  font-size: 1.5rem;
+  color: #212529;
+}
