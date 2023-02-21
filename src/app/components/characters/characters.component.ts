@@ -14,6 +14,7 @@ import {Router} from "@angular/router";
 export class CharactersComponent implements OnInit {
   display = true;
   isLoading = true;
+  pagination = 0;
 
   dataCharacters: CharacterModel[];
   dataInfo: InfoModel;
@@ -24,12 +25,13 @@ export class CharactersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getCharacters(paths.characters);
+    this.getCharacters(paths.characters, true);
   }
 
-  getCharacters(url: string): void {
+  getCharacters(url: string, pag: boolean): void {
     this.isLoading = true;
     this.dataCharacters = [];
+    pag ? this.pagination++ : this.pagination--;
     this.rickmortyService.getData(url)
       .then((res) => {
         this.dataCharacters = res.results;
@@ -49,4 +51,5 @@ export class CharactersComponent implements OnInit {
         this.messageService.add({severity: 'error', summary: 'Error', detail: err});
       });
   }
+
 }

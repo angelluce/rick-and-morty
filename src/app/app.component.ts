@@ -7,44 +7,63 @@ import {MenuItem} from "primeng/api";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Inicio';
-  display = true;
+  title = 'Home';
   dockItems: MenuItem[] = [
     {
-      label: 'Inicio',
+      label: 'Home',
       icon: "assets/icons/home.png",
       command: () => {
-        this.title = 'Inicio';
-        this.display = true;
+        this.title = 'Home';
+      },
+      tooltipOptions: {
+        tooltipLabel: "Home",
+        tooltipPosition: 'bottom',
+        positionTop: -15,
+        positionLeft: 15
       },
       routerLink: ['home'],
     },
     {
-      label: 'Personajes',
+      label: 'Characters',
       icon: "assets/icons/characters.png",
       command: () => {
-        this.title = 'Personajes';
-        this.display = true;
+        this.title = 'Characters';
+      },
+      tooltipOptions: {
+        tooltipLabel: "Characters",
+        tooltipPosition: 'bottom',
+        positionTop: -15,
+        positionLeft: 15
       },
       routerLink: ['characters'],
     },
-    /*{
-      label: 'Ubicaciones',
+    {
+      label: 'Locations',
       icon: "assets/icons/locations.png",
       command: () => {
-        this.title = 'Ubicaciones';
-        this.display = true;
+        this.title = 'Locations';
+      },
+      tooltipOptions: {
+        tooltipLabel: "Locations",
+        tooltipPosition: 'bottom',
+        positionTop: -15,
+        positionLeft: 15
       },
       routerLink: ['locations'],
     },
     {
-      label: 'Episodios',
+      label: 'Episodes',
       icon: "assets/icons/episodes.png",
       command: () => {
-        this.title = 'Episodios';
-        this.display = true;
+        this.title = 'Episodes';
+      },
+      tooltipOptions: {
+        tooltipLabel: "Episodes",
+        tooltipPosition: 'bottom',
+        positionTop: -15,
+        positionLeft: 15
       },
       routerLink: ['episodes'],
-    }*/
+    }
   ];
 }
