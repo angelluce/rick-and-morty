@@ -1,23 +1,45 @@
 <p-dialog [(visible)]="display"
-          [style]="{width: '95vw', height: '75vh'}"
+          [style]="{width: '100vw', height: '100vh'}"
           [baseZIndex]="10000"
           [draggable]="false"
-          [header]="'Espisodios'"
+          [header]="'Episodes'"
           appendTo="body"
-          styleClass="p-fluid">
+          styleClass="p-fluid"
+          (onHide)="redirectToHome()">
+  <p-toast [baseZIndex]="10000"></p-toast>
   <div class="row row-cols-auto justify-content-center m-0 p-0 b-0">
-
+    <div *ngFor="let episode of dataEpisodes"
+         class="card shadow m-2 p-0" style="width: 15rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{episode.name}}</h5>
+        <p-tag value="{{episode.air_date}}"></p-tag>
+        <p-divider></p-divider>
+        <p class="card-text"><b>Episode:</b> {{episode.episode}}</p>
+        <!--<a [routerLink]="['/episode', episode.id]"
+           class="btn btn-primary">Ver</a>-->
+      </div>
+    </div>
   </div>
   <ng-template pTemplate="footer">
-    <button [disabled]="!dataInfo.prev"
-            pButton type="button"
-            icon="pi pi-angle-left"
-            class="px-3"
-            (click)="getEpisodes(dataInfo.prev)"></button>
-    <button [disabled]="!dataInfo.next"
-            pButton type="button"
-            icon="pi pi-angle-right"
-            class="px-3"
-            (click)="getEpisodes(dataInfo.next)"></button>
+    <div class="d-flex justify-content-between mt-3">
+      <div class="d-flex align-items-center">
+        <label *ngIf="!isLoading">Page: {{pagination}}</label>
+        <i *ngIf="isLoading" class="pi pi-spin pi-spinner"
+           style="font-size: 1.5rem"></i>
+        <label *ngIf="isLoading" class="mx-2">Loading</label>
+      </div>
+      <div>
+        <button [disabled]="!dataInfo?.prev || isLoading"
+                pButton type="button"
+                icon="pi pi-angle-left"
+                class="px-3 me-3"
+                (click)="getEpisodes(dataInfo.prev, false)"></button>
+        <button [disabled]="!dataInfo?.next  || isLoading"
+                pButton type="button"
+                icon="pi pi-angle-right"
+                class="px-3 m-0"
+                (click)="getEpisodes(dataInfo.next, true)"></button>
+      </div>
+    </div>
   </ng-template>
 </p-dialog>

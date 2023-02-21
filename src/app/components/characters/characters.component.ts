@@ -51,4 +51,5 @@ export class CharactersComponent implements OnInit {
         this.messageService.add({severity: 'error', summary: 'Error', detail: err});
       });
   }
+
 }

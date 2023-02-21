@@ -16,6 +16,7 @@ import {TagModule} from "primeng/tag";
 import {ToastModule} from "primeng/toast";
 import {MessageService} from "primeng/api";
 import { InfoComponent } from './components/info/info.component';
+import {DividerModule} from "primeng/divider";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { InfoComponent } from './components/info/info.component';
         DockModule,
         ButtonModule,
         TagModule,
-        ToastModule
+        ToastModule,
+        DividerModule
     ],
   providers: [MessageService],
   bootstrap: [AppComponent]

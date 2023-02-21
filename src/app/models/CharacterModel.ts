@@ -5,4 +5,6 @@ export class CharacterModel {
   species: string = '';
   gender: string = '';
   image: string = '';
+  origin: any = {};
+  location: any = {};
 }
