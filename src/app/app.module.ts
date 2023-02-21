@@ -12,6 +12,10 @@ import {HttpClientModule} from "@angular/common/http";
 import {DialogModule} from "primeng/dialog";
 import {DockModule} from "primeng/dock";
 import {ButtonModule} from 'primeng/button';
+import {TagModule} from "primeng/tag";
+import {ToastModule} from "primeng/toast";
+import {MessageService} from "primeng/api";
+import { InfoComponent } from './components/info/info.component';
 
 @NgModule({
   declarations: [
@@ -19,18 +23,21 @@ import {ButtonModule} from 'primeng/button';
     HomeComponent,
     CharactersComponent,
     LocationsComponent,
-    EpisodesComponent
+    EpisodesComponent,
+    InfoComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    DialogModule,
-    DockModule,
-    ButtonModule
-  ],
-  providers: [],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        DialogModule,
+        DockModule,
+        ButtonModule,
+        TagModule,
+        ToastModule
+    ],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

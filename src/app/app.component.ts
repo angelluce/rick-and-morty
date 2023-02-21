@@ -28,7 +28,7 @@ export class AppComponent {
       },
       routerLink: ['characters'],
     },
-    {
+    /*{
       label: 'Ubicaciones',
       icon: "assets/icons/locations.png",
       command: () => {
@@ -45,6 +45,6 @@ export class AppComponent {
         this.display = true;
       },
       routerLink: ['episodes'],
-    }
+    }*/
   ];
 }

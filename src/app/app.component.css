@@ -5,6 +5,6 @@
   top: 0;
   left: 0;
   z-index: -100;
-  #background-image: url(https://www.criptonoticias.com/wp-content/uploads/2021/01/ricky-morty-tokens-coleccionables.jpg);
+  background-image: url(https://res.cloudinary.com/dk42rsrhh/image/upload/v1676938692/RickAndMorty/escritorio_uha98c.jpg);
   background-size: cover;
 }

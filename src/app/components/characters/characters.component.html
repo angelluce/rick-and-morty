@@ -1,9 +1,47 @@
-<div class="row row-cols-auto justify-content-center m-0 p-0 b-0">
-  <div *ngFor="let character of dataCharacters" class="card m-1 p-0" style="width: 10rem;">
-    <img src="{{character.image}}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-subtitle m-0 p-0">{{character.name}}</p>
+<p-dialog [(visible)]="display"
+          [style]="{width: '95vw', height: '70vh'}"
+          [baseZIndex]="10000"
+          [draggable]="false"
+          [header]="'Personajes'"
+          appendTo="body"
+          styleClass="p-fluid shadow"
+          (onHide)="redirectToHome()">
+  <p-toast [baseZIndex]="10000"></p-toast>
+  <div class="row row-cols-auto justify-content-center m-0 p-0 b-0">
+    <div *ngFor="let character of dataCharacters"
+         class="card shadow m-2 p-0" style="width: 12rem;">
+      <img src="{{character.image}}" class="card-img-top" alt="{{character.name}}">
+      <div class="card-body">
+        <h5 class="card-title text-center">{{character.name}}</h5>
+        <p class="text-center">{{character.species}}
+          <p-tag value="{{character.status}}"></p-tag>
+        </p>
+        <p>
+          <small class="text-center">{{character.gender}}</small>
+        </p>
+      </div>
     </div>
   </div>
-</div>
-
+  <ng-template pTemplate="footer">
+    <div class="d-flex justify-content-between mt-3">
+      <div class="d-flex align-items-center">
+        <label *ngIf="!isLoading">{{dataInfo.count}} personajes</label>
+        <i *ngIf="isLoading" class="pi pi-spin pi-spinner me-1"
+           style="font-size: 1.5rem"></i>
+        <label *ngIf="isLoading">Cargando</label>
+      </div>
+      <div>
+        <button [disabled]="!dataInfo?.prev || isLoading"
+                pButton type="button"
+                icon="pi pi-angle-left"
+                class="px-3 me-3"
+                (click)="getCharacters(dataInfo.prev)"></button>
+        <button [disabled]="!dataInfo?.next  || isLoading"
+                pButton type="button"
+                icon="pi pi-angle-right"
+                class="px-3 m-0"
+                (click)="getCharacters(dataInfo.next)"></button>
+      </div>
+    </div>
+  </ng-template>
+</p-dialog>
