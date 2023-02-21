@@ -13,6 +13,9 @@ import {DialogModule} from "primeng/dialog";
 import {DockModule} from "primeng/dock";
 import {ButtonModule} from 'primeng/button';
 import {TagModule} from "primeng/tag";
+import {ToastModule} from "primeng/toast";
+import {MessageService} from "primeng/api";
+import { InfoComponent } from './components/info/info.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import {TagModule} from "primeng/tag";
     HomeComponent,
     CharactersComponent,
     LocationsComponent,
-    EpisodesComponent
+    EpisodesComponent,
+    InfoComponent
   ],
     imports: [
         BrowserModule,
@@ -30,9 +34,10 @@ import {TagModule} from "primeng/tag";
         DialogModule,
         DockModule,
         ButtonModule,
-        TagModule
+        TagModule,
+        ToastModule
     ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
