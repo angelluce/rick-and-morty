@@ -21,7 +21,7 @@ export class SocialNetworksService {
       },
       {
         name: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/angel-geovanny-lucero/',
+        url: 'https://www.linkedin.com/in/angellucero/',
         icon: 'pi-linkedin',
       },
     ];

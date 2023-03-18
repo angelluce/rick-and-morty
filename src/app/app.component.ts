@@ -9,6 +9,7 @@ import {MenuItem} from "primeng/api";
 export class AppComponent {
   title = 'Home';
   dockItems: MenuItem[] = [
+    /*
     {
       label: 'Home',
       icon: "assets/icons/home.png",
@@ -22,7 +23,7 @@ export class AppComponent {
         positionLeft: 15
       },
       routerLink: ['home'],
-    },
+    },*/
     {
       label: 'Characters',
       icon: "assets/icons/characters.png",
