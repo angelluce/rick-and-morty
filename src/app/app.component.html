@@ -1,11 +1,15 @@
-<div class="dock-window dock-advanced">
-  <p-dock [model]="dockItems" position="top">
-    <ng-template pTemplate="item" let-item>
-      <img class="p-2" [src]="item.icon" [alt]="item.label" width="80%">
-    </ng-template>
-  </p-dock>
+<div class="dock-window dock-advance">
+  <div class="fixed-top">
+    <p-dock [model]="dockItems" position="top">
+      <ng-template pTemplate="item" let-item>
+        <img class="p-2" [src]="item.icon" [alt]="item.label" width="75%">
+      </ng-template>
+    </p-dock>
+  </div>
 
-  <router-outlet></router-outlet>
+  <div class="container text-center my-5 py-5">
+    <router-outlet></router-outlet>
+  </div>
 
   <app-info></app-info>
 </div>

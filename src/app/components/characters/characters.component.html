@@ -1,53 +1,42 @@
-<p-dialog [(visible)]="display"
-          [baseZIndex]="10000"
-          [style]="{width: '100vw', height: '100vh'}"
-          [draggable]="false"
-          [header]="'Characters'"
-          appendTo="body"
-          styleClass="p-fluid shadow"
-          (onHide)="redirectToHome()">
-  <p-toast [baseZIndex]="10000"></p-toast>
-  <div class="row row-cols-auto justify-content-center m-0 p-0 b-0">
-    <div *ngFor="let character of dataCharacters"
-         class="card shadow m-2 p-0" style="width: 15rem;">
-      <img src="{{character.image}}" class="card-img-top" alt="{{character.name}}">
-      <div class="card-body">
-        <h5 class="card-title text-center">{{character.name}}</h5>
-        <div class="d-flex justify-content-between mb-3">
-          <small class="text-start"
-                 [ngSwitch]="character.status">{{character.species}}
-            <p-tag *ngSwitchCase="'Alive'" severity="success" value="{{character.status}}"></p-tag>
-            <p-tag *ngSwitchCase="'Dead'" severity="warning" value="{{character.status}}"></p-tag>
-            <p-tag *ngSwitchDefault value="{{character.status}}"></p-tag>
-          </small>
-          <small class="text-end">{{character.gender}}</small>
-        </div>
-        <p-divider></p-divider>
-        <p class="card-text m-0"><b>Origin:</b> {{character.origin.name}}</p>
-        <p class="card-text m-0"><b>Location:</b> {{character.location.name}}</p>
+<p-toast [baseZIndex]="10000"></p-toast>
+
+<div class="fade row row-cols-auto justify-content-center">
+  <div *ngFor="let character of dataCharacters" class="card shadow">
+    <img src="{{character.image}}" class="card-img-top" alt="{{character.name}}">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{character.name}}</h5>
+      <div class="d-flex justify-content-between mb-3">
+        <small class="text-start"
+               [ngSwitch]="character.status">{{character.species}}
+          <p-tag *ngSwitchCase="'Alive'" severity="success" value="{{character.status}}"></p-tag>
+          <p-tag *ngSwitchCase="'Dead'" severity="warning" value="{{character.status}}"></p-tag>
+          <p-tag *ngSwitchDefault value="{{character.status}}"></p-tag>
+        </small>
+        <small class="text-end">{{character.gender}}</small>
       </div>
+      <p-divider></p-divider>
+      <p class="card-text"><b>Origin:</b> {{character.origin.name}}</p>
+      <p class="card-text"><b>Location:</b> {{character.location.name}}</p>
     </div>
   </div>
-  <ng-template pTemplate="footer">
-    <div class="d-flex justify-content-between mt-3">
-      <div class="d-flex align-items-center">
-        <label *ngIf="!isLoading">Page: {{pagination}}</label>
-        <i *ngIf="isLoading" class="pi pi-spin pi-spinner"
-           style="font-size: 1.5rem"></i>
-        <label *ngIf="isLoading" class="mx-2">Loading</label>
-      </div>
-      <div>
-        <button [disabled]="!dataInfo?.prev || isLoading"
-                pButton type="button"
-                icon="pi pi-angle-left"
-                class="px-3 me-3"
-                (click)="getCharacters(dataInfo.prev, false)"></button>
-        <button [disabled]="!dataInfo?.next  || isLoading"
-                pButton type="button"
-                icon="pi pi-angle-right"
-                class="px-3 m-0"
-                (click)="getCharacters(dataInfo.next, true)"></button>
-      </div>
-    </div>
-  </ng-template>
-</p-dialog>
+</div>
+
+<div class="fadeIn d-flex justify-content-between mt-3">
+  <div class="d-flex align-items-center">
+    <label *ngIf="!isLoading">Page: {{pagination}}</label>
+    <i *ngIf="isLoading" class="pi pi-spin pi-spinner"></i>
+    <label *ngIf="isLoading" class="mx-2">Loading</label>
+  </div>
+  <div class="buttons">
+    <button [disabled]="!dataInfo?.prev || isLoading"
+            pButton type="button"
+            icon="pi pi-angle-left"
+            class="px-3 me-3"
+            (click)="getCharacters(dataInfo.prev, false)"></button>
+    <button [disabled]="!dataInfo?.next  || isLoading"
+            pButton type="button"
+            icon="pi pi-angle-right"
+            class="px-3 m-0"
+            (click)="getCharacters(dataInfo.next, true)"></button>
+  </div>
+</div>

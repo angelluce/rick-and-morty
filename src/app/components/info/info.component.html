@@ -1,19 +1,18 @@
-<div class="fixed-bottom bg-light">
-  <div class="d-flex justify-content-center info mt-3">
-    <p *ngIf="dataCaracters" class="text-center mx-3">Characters: {{dataCaracters.count}}</p>
-    <p *ngIf="dataLocations" class="text-center mx-3">Locations: {{dataLocations.count}}</p>
-    <p *ngIf="dataEpisodes" class="text-center mx-3">Episodes: {{dataEpisodes.count}}</p>
+<div class="row row-cols-auto justify-content-between fixed-bottom bg-light p-2">
+  <div class="d-flex text-center info">
+    <small *ngIf="dataCaracters" class="text-center me-3">Characters: {{dataCaracters.count}}</small>
+    <small *ngIf="dataLocations" class="text-center me-3">Locations: {{dataLocations.count}}</small>
+    <small *ngIf="dataEpisodes" class="text-center me-3">Episodes: {{dataEpisodes.count}}</small>
   </div>
-  <div class="d-flex justify-content-between mx-3">
-    <div class="d-flex networks">
+  <div class="d-flex text-center">
+    <div class="networks">
       <a *ngFor="let socialNetwork of dataSocialNetworks"
          href="{{socialNetwork.url}}" target="_blank">
         <i class="pi {{socialNetwork.icon}} me-3 my-1 networks"
-           style="font-size: 1.2rem"
            pTooltip="{{socialNetwork.name}}"></i>
       </a>
     </div>
-    <div class="d-flex author">
+    <div class="author">
       <p class="text-end">
         <i class="pi pi-code m-1"></i>
         Angel Lucero | 2023</p>
