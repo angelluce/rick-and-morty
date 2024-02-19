@@ -9,9 +9,6 @@ import {SocialNetworkModel} from "../../models/SocialNetworkModel";
   styleUrls: ['./info.component.css']
 })
 export class InfoComponent implements OnInit {
-  dataCaracters: InfoModel;
-  dataLocations: InfoModel;
-  dataEpisodes: InfoModel;
   dataSocialNetworks: SocialNetworkModel[];
 
   constructor(private socialNetworksService: SocialNetworksService) {
