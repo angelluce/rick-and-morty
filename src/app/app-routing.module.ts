@@ -7,7 +7,7 @@ import {EpisodesComponent} from "./components/episodes/episodes.component";
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent
   },
   {
@@ -22,8 +22,8 @@ const routes: Routes = [
     path: 'episodes',
     component: EpisodesComponent
   },
-  {path: '', pathMatch: 'full', redirectTo: 'home'},
-  {path: '**', pathMatch: 'full', redirectTo: 'home'}
+  {path: '', pathMatch: 'full', redirectTo: ''},
+  {path: '**', pathMatch: 'full', redirectTo: ''}
 ];
 
 @NgModule({

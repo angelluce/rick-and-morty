@@ -4,6 +4,10 @@
   cursor: default;
 }
 
+.p-dock .p-dock-list {
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+
 p {
   margin: 0;
 }
