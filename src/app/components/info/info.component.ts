@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {InfoModel} from "../../models/InfoModel";
 import {SocialNetworksService} from "../../services/social-networks.service";
 import {SocialNetworkModel} from "../../models/SocialNetworkModel";
 
