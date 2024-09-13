@@ -21,7 +21,7 @@ export class AppComponent {
         positionTop: -15,
         positionLeft: 15
       },
-      routerLink: ['home'],
+      routerLink: [''],
     },
     {
       label: 'Characters',

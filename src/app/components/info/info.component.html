@@ -1,21 +1,18 @@
 <div class="row row-cols-auto justify-content-between fixed-bottom bg-light p-2">
-  <div class="d-flex text-center info">
-    <small *ngIf="dataCaracters" class="text-center me-3">Characters: {{dataCaracters.count}}</small>
-    <small *ngIf="dataLocations" class="text-center me-3">Locations: {{dataLocations.count}}</small>
-    <small *ngIf="dataEpisodes" class="text-center me-3">Episodes: {{dataEpisodes.count}}</small>
-  </div>
-  <div class="d-flex text-center">
-    <div class="networks">
-      <a *ngFor="let socialNetwork of dataSocialNetworks"
-         href="{{socialNetwork.url}}" target="_blank">
-        <i class="pi {{socialNetwork.icon}} me-3 my-1 networks"
-           pTooltip="{{socialNetwork.name}}"></i>
-      </a>
+    <div class="d-flex text-center info">
+        <small *ngIf="dataCaracters" class="text-center me-3">Characters: {{dataCaracters.count}}</small>
+        <small *ngIf="dataLocations" class="text-center me-3">Locations: {{dataLocations.count}}</small>
+        <small *ngIf="dataEpisodes" class="text-center me-3">Episodes: {{dataEpisodes.count}}</small>
     </div>
-    <div class="author">
-      <p class="text-end">
-        <i class="pi pi-code m-1"></i>
-        Angel Lucero | 2023</p>
+    <div class="d-flex text-center">
+        <div class="networks">
+            <a *ngFor="let socialNetwork of dataSocialNetworks" href="{{socialNetwork.url}}" target="_blank" aria-label="Red social">
+                <i class="pi {{socialNetwork.icon}} me-3 my-1 networks" pTooltip="{{socialNetwork.name}}"></i>
+            </a>
+        </div>
+        <div class="author">
+            <p class="text-end">
+                <i class="pi pi-code m-1"></i> Angel Lucero | 2023</p>
+        </div>
     </div>
-  </div>
 </div>

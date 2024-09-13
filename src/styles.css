@@ -1,47 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+
 * {
-  font-family: 'Shantell Sans', cursive;
-  cursor: default;
+    font-family: 'Shantell Sans', cursive;
+    cursor: default;
 }
 
 p {
-  margin: 0;
+    margin: 0;
 }
 
 i {
-  font-size: 1.5rem
+    font-size: 1.5rem
 }
 
 .info {
-  color: #dc8700;
-  font-weight: bold;
+    color: #724b0c;
+    font-weight: bold;
 }
 
 .networks {
-  color: #212529;
+    color: #212529;
 }
 
 .card {
-  width: 15rem;
-  margin: 12px;
-  padding: 0;
+    width: 15rem;
+    margin: 12px;
+    padding: 0;
 }
 
 .fade {
-  animation: fadeInAnimation 1s ease-in-out forwards;
-  opacity: 0;
+    animation: fadeInAnimation 1s ease-in-out forwards;
+    opacity: 0;
 }
 
 .fadeIn {
-  animation: fadeInAnimation 3s ease-in-out forwards;
-  opacity: 0;
+    animation: fadeInAnimation 3s ease-in-out forwards;
+    opacity: 0;
 }
 
 @keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

@@ -31,6 +31,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Deploy to GitHub Pages
+
+Run `ng build --prod`, next run `ng deploy --base-href=https://angelluce.github.io/rick-and-morty/`  to deploy the project to GitHub Pages.
+
 ### Authors
 
 This project was developed by [Angel Lucero](https://github.com/angelluce).
