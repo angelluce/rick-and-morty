@@ -5,17 +5,16 @@
     cursor: default;
 }
 
+.p-dock .p-dock-list {
+    background: rgba(255, 255, 255, 0.8) !important;
+}
+
 p {
     margin: 0;
 }
 
 i {
     font-size: 1.5rem
-}
-
-.info {
-    color: #724b0c;
-    font-weight: bold;
 }
 
 .networks {
